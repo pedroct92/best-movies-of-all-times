@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,11 @@ export class AppComponent {
   body;
 
   constructor() {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    // todo make new key
+    fetch('https://api.themoviedb.org/3/movie/550?api_key=5d289bc5b86e132b224cb3d2854d6990')
       .then(body => body.json())
       .then(res => this.body = res);
+
+    console.log('Value => ');
   }
 }
