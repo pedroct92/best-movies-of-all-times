@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bmoat';
+  body;
+
+  constructor() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(body => body.json())
+      .then(res => this.body = res);
+  }
 }
